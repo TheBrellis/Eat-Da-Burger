@@ -8,7 +8,13 @@ const orm = {
             cb(res);
         })
     },
-    insertOne: function(){
+    insertOne: function(cols,vals,cb){
+        let query = `INSERT INTO burgers (${cols}) VALUES (${vals}) `;
+        
+        connection.query(query, vals, function(err, res) {
+            if (err) throw err;
+            cb(res)
+        })
 
     },
     updateOne: function(){
