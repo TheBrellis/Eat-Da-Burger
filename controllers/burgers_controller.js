@@ -5,6 +5,9 @@ const router = express.Router();
 const burger = require("../models/burger.js");
 //Page Routings ================================================= 
 
+router.get("/", function (req, res) {
+    res.render("index")
+});
 
 
 //===================================================================
