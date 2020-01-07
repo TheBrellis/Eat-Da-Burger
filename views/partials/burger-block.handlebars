@@ -1,0 +1,24 @@
+<div>
+    {{#if devour}}
+    <div class="row m-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    {{id}}. {{burger_name}} <button class="devour-burger" data-id="{{id}}">Devour It!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{#unless devour}}
+    <div class="row text-muted">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    {{id}}. {{burger_name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/unless}}
+</div>

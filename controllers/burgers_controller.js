@@ -6,16 +6,17 @@ const burger = require("../models/burger.js");
 //Page Routings ================================================= 
 
 router.get("/", function (req, res) {
-    res.render("index")
+    burger.selectAll(function(data) {
+        let hbsObject = {
+            burgers: data
+        };
+        res.render("index", hbsObject);
+    })
 });
 
-router.put("/api/add", function (req,res) {
-
-    res.render("index")
-})
 
 router.post("/api/add", function(req, res) {
-    burger.create([
+    burger.insertOne([
         "burger_name","devoured"
     ], [
         req.body.burger_name, req.body.devoured

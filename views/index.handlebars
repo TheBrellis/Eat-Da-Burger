@@ -5,23 +5,33 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class= "col-md-4"></div>
+        <div class="col-md-4"></div>
         <div class="col-md-4">
             <form>
                 <div class="form-group text-center">
                     <input class="form-control" id="new-burger" placeholder="Name Da Burger!"></input>
-                    <button type="submit" id = "submit-burger" class="btn btn-primary">Submit Da Burger!</button>
+                    <button type="submit" id="submit-burger" class="btn btn-primary">Submit Da Burger!</button>
                 </div>
             </form>
         </div>
-        <div class= "col-md-4"></div>
+        <div class="col-md-4"></div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-
+        <div class="col-md-6 border-b">
+            <h2>These burgers must be devoured!</h2>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    {{> burger-block devour= true}}
+                {{/unless}}
+            {{/each}}
         </div>
-        <div class="col-md-6">
-
+        <div class="col-md-6 text-light">
+            <h2>You've devoured these burgers!</h2>
+            {{#each burgers}}
+                {{#if devoured}}
+                    {{> burger-block devour= false}}
+                {{/if}}
+            {{/each}}
         </div>
     </div>
 </div>
