@@ -17,7 +17,27 @@ $(function() {
             }
         )
     });
-    
+
+    $('.devour-burger').on("click", (event)=> {
+        event.preventDefault();
+        var id = $(this).data("id");
+        console.log(id);
+        let updateBurger = {
+            devoured: true
+        };
+        /*
+        $.ajax(`/api/update/${id}`, {
+            type: "PUT",
+            data: updateBurger
+        }).then(
+            function() {
+                console.log("Burger's been devoured");
+                location.reload();
+            }
+        )
+*/
+    })
+
 
 
 
