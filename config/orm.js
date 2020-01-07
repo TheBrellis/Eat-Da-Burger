@@ -34,7 +34,7 @@ const orm = {
         })
     },
     insertOne: function(cols,vals,cb){
-        let query = `INSERT INTO burgers (${cols}) VALUES (${vals});`;
+        let query = `INSERT INTO burgers (${cols}) VALUES (?,?);`;
         connection.query(query, vals, function(err, res) {
             if (err) throw err;
             cb(res)

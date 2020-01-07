@@ -4,7 +4,7 @@ $(function() {
 
         let newBurger = {
             burger_name: $("#new-burger").val().trim(),
-            devoured: false
+            devoured: 0
         };
 
         $.ajax("/api/add", {
