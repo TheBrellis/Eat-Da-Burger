@@ -20,13 +20,12 @@ $(function() {
 
     $('.devour-burger').on("click", (event)=> {
         event.preventDefault();
-        var id = $(this).data("id");
-        console.log(id);
+        let id = event.target.dataset.id.toString()
         let updateBurger = {
             devoured: true
         };
-        /*
-        $.ajax(`/api/update/${id}`, {
+       updateBurger = (updateBurger)
+        $.ajax(`/api/update/`+ id, {
             type: "PUT",
             data: updateBurger
         }).then(
@@ -35,7 +34,7 @@ $(function() {
                 location.reload();
             }
         )
-*/
+
     })
 
 
