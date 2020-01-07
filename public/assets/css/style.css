@@ -1,0 +1,17 @@
+body {
+    background-image: url("/assets/images/burger.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: orange;
+    background-attachment: scroll;
+}
+
+.container {
+    background-color: rgba(248,246,246,0.5);
+    position: relative;
+    top: 40px;
+}
+
+#new-burger {
+    margin-bottom: 20px;
+}

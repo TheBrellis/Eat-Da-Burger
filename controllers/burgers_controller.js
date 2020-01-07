@@ -9,6 +9,10 @@ router.get("/", function (req, res) {
     res.render("index")
 });
 
+router.put("/api/add", function (req,res) {
+
+    res.render("index")
+})
 
 //===================================================================
 
