@@ -14,6 +14,16 @@ router.put("/api/add", function (req,res) {
     res.render("index")
 })
 
+router.post("/api/add", function(req, res) {
+    burger.create([
+        "burger_name","devoured"
+    ], [
+        req.body.burger_name, req.body.devoured
+    ], function(result) {
+        res.json("Burger has been added to dB!");
+    });
+});
+
 //===================================================================
 
 module.exports = router;
